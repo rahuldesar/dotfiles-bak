@@ -1,78 +1,52 @@
 return {
-  -- Themes and Visuals
-  'navarasu/onedark.nvim',
-  'olivercederborg/poimandres.nvim',
-  'tpope/vim-rhubarb',
-
+  --  ========= MUST HAVE =============
+  --  TELESCOPE
   {
-    -- Set lualine as statusline
-    'nvim-lualine/lualine.nvim',
-    -- See `:help lualine.txt`
-    opts = {
-      options = {
-        icons_enabled = true,
-        theme = 'auto',
-        component_separators = '|',
-        section_separators = '',
-        --section_separators = { left = '', right = '' },
-      },
-    },
+    'nvim-telescope/telescope.nvim',
+    tag = '0.1.1',
+    -- or                              , branch = '0.1.1',
+    dependencies = { 'nvim-lua/plenary.nvim' }
   },
 
   {
-    "nvim-tree/nvim-tree.lua",
-    version = "*",
+    'nvim-treesitter/nvim-treesitter',
     dependencies = {
-      "nvim-tree/nvim-web-devicons",
+      'nvim-treesitter/nvim-treesitter-textobjects',
     },
     config = function()
-      require("nvim-tree").setup {}
+      pcall(require('nvim-treesitter.install').update { with_sync = true })
     end,
   },
+  { "mbbill/undotree" },
+  { "tpope/vim-fugitive" },
 
+  -- { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+  --  "nvim-treesitter/playground",
+  { "theprimeagen/harpoon" },
+  "tpope/vim-rhubarb",
   {
-    -- Add indentation guides even on blank lines
-    'lukas-reineke/indent-blankline.nvim',
-    -- Enable `lukas-reineke/indent-blankline.nvim`
-    -- See `:help indent_blankline.txt`
-    opts = {
-      char = '┊',
-      show_trailing_blankline_indent = false,
-    },
+    'VonHeikemen/lsp-zero.nvim',
+    branch = 'v1.x',
+    dependencies = {
+      -- LSP Support
+      { 'neovim/nvim-lspconfig' },             -- Required
+      { 'williamboman/mason.nvim' },           -- Optional
+      { 'williamboman/mason-lspconfig.nvim' }, -- Optional
+
+      -- Autocompletion
+      { 'hrsh7th/nvim-cmp' },         -- Required
+      { 'hrsh7th/cmp-nvim-lsp' },     -- Required
+      { 'hrsh7th/cmp-buffer' },       -- Optional
+      { 'hrsh7th/cmp-path' },         -- Optional
+      { 'saadparwaiz1/cmp_luasnip' }, -- Optional
+      { 'hrsh7th/cmp-nvim-lua' },     -- Optional
+
+      -- Snippets
+      { 'L3MON4D3/LuaSnip' },             -- Required
+      { 'rafamadriz/friendly-snippets' }, -- Optional
+    }
   },
 
-  {
-    "kylechui/nvim-surround",
-    version = "*", -- Use for stability; omit to use `main` branch for the latest features
-    event = "VeryLazy",
-    config = function()
-      require("nvim-surround").setup({
-        -- Configuration here, or leave empty to use defaults
-      })
-    end
-  },
-
-  {
-    -- Autocompletion
-    'hrsh7th/nvim-cmp',
-    dependencies = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' },
-  },
-
-  {
-    "numToStr/Comment.nvim",
-    -- keys = { "gc", "gb" },
-    config = function()
-      require("Comment").setup()
-    end,
-  },
-
-  {
-    'akinsho/bufferline.nvim',
-    version = "v3.*",
-    dependencies =
-    'nvim-tree/nvim-web-devicons'
-  },
-  { "windwp/nvim-autopairs", config = function() require("nvim-autopairs").setup {} end },
 
   {
     "folke/which-key.nvim",
@@ -87,12 +61,91 @@ return {
     end,
   },
 
-  { "catppuccin/nvim",       name = "catppuccin" },
   {
     "lewis6991/gitsigns.nvim",
     config = function()
       require('gitsigns').setup()
     end
-  }
+  },
+
+
+  -- ======== Quality of Life ==========
+
+  {
+    'lukas-reineke/indent-blankline.nvim',
+    -- Enable `lukas-reineke/indent-blankline.nvim`
+    -- See `:help indent_blankline.txt`
+    opts = {
+      char = '┊',
+      show_trailing_blankline_indent = false,
+    },
+  },
+
+
+  {
+    -- Autocompletion
+    'hrsh7th/nvim-cmp',
+    dependencies = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' },
+  },
+
+
+  { "windwp/nvim-autopairs", config = function() require("nvim-autopairs").setup {} end },
+
+  {
+    'akinsho/bufferline.nvim',
+    version = "v3.*",
+    dependencies =
+    'nvim-tree/nvim-web-devicons'
+  },
+
+
+  {
+    "numToStr/Comment.nvim",
+    -- keys = { "gc", "gb" },
+    config = function()
+      require("Comment").setup()
+    end,
+  },
+  {
+    "nvim-tree/nvim-tree.lua",
+    version = "*",
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
+    config = function()
+      require("nvim-tree").setup {}
+    end,
+  },
+
+  {
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+      require("nvim-surround").setup({
+        -- Configuration here, or leave empty to use defaults
+      })
+    end
+  },
+
+  -- Themes and Visuals
+  --
+  'navarasu/onedark.nvim',
+  'olivercederborg/poimandres.nvim',
+  { 'rose-pine/neovim',      name = 'rose-pine' },
+  { "catppuccin/nvim",       name = "catppuccin" },
+  {
+    'nvim-lualine/lualine.nvim',
+    -- See `:help lualine.txt`
+    opts = {
+      options = {
+        icons_enabled = true,
+        theme = 'auto',
+        component_separators = '|',
+        section_separators = '',
+        --section_separators = { left = '', right = '' },
+      },
+    },
+  },
 
 }
