@@ -1,5 +1,4 @@
 return {
-
   -- Themes and Visuals
   'navarasu/onedark.nvim',
   'olivercederborg/poimandres.nvim',
@@ -67,8 +66,12 @@ return {
     end,
   },
 
-  {'akinsho/bufferline.nvim', version = "v3.*", dependencies = 'nvim-tree/nvim-web-devicons'},
-
+  {
+    'akinsho/bufferline.nvim',
+    version = "v3.*",
+    dependencies =
+    'nvim-tree/nvim-web-devicons'
+  },
   { "windwp/nvim-autopairs", config = function() require("nvim-autopairs").setup {} end },
 
   {
@@ -84,12 +87,12 @@ return {
     end,
   },
 
-  { "catppuccin/nvim", name = "catppuccin" },
+  { "catppuccin/nvim",       name = "catppuccin" },
   {
     "lewis6991/gitsigns.nvim",
-  config = function()
-    require('gitsigns').setup()
-  end
-}
+    config = function()
+      require('gitsigns').setup()
+    end
+  }
 
 }
