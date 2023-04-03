@@ -3,8 +3,8 @@ vim.keymap.set("n", "<leader><leader>", function()
 end)
 
 vim.g.mapleader = " "
---vim.keymap.set("n", "<leader>b", vim.cmd.NvimTreeToggle)
-vim.keymap.set("n", "<leader>b", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>b", vim.cmd.NvimTreeToggle)
+--vim.keymap.set("n", "<leader>b", vim.cmd.Ex)
 
 vim.api.nvim_set_keymap('', '<C-\\>', ':vs<CR>', { noremap = true })
 --vim.api.nvim_set_keymap('', '<C-w>', ':q<CR>', {noremap = true})

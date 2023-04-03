@@ -16,7 +16,7 @@ vim.opt.showmode = true
 --vim.opt.background = 'dark'
 
 -- Set the default color scheme
-vim.cmd('colorscheme poimandres')
+vim.cmd('colorscheme catppuccin')
 
 -- Configure status line
 --vim.g.lightline = { colorscheme = 'onedark' }

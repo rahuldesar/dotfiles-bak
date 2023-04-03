@@ -13,7 +13,6 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-
 require("lazy").setup({
   --  TELESCOPE
   {
@@ -22,9 +21,9 @@ require("lazy").setup({
     -- or                              , branch = '0.1.1',
     dependencies = { 'nvim-lua/plenary.nvim' }
   },
-
-  { 'rose-pine/neovim',                name = 'rose-pine' },
-  { -- Highlight, edit, and navigate code
+  { 'rose-pine/neovim',    name = 'rose-pine' },
+  {
+    -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     dependencies = {
       'nvim-treesitter/nvim-treesitter-textobjects',
@@ -33,8 +32,8 @@ require("lazy").setup({
       pcall(require('nvim-treesitter.install').update { with_sync = true })
     end,
   },
--- { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
- --  "nvim-treesitter/playground",
+  -- { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+  --  "nvim-treesitter/playground",
   { "theprimeagen/harpoon" },
   { "mbbill/undotree" },
   { "tpope/vim-fugitive" },
@@ -62,7 +61,5 @@ require("lazy").setup({
     }
   },
 
-
-
- { import = 'rahul_config.plugins' },
+  { import = 'rahul_config.plugins' },
 }, {})
