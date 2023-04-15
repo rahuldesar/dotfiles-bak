@@ -20,8 +20,6 @@ return {
   { "mbbill/undotree" },
   { "tpope/vim-fugitive" },
 
-  -- { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
-  --  "nvim-treesitter/playground",
   { "theprimeagen/harpoon" },
   "tpope/vim-rhubarb",
   {
@@ -89,7 +87,7 @@ return {
   },
 
 
-  { "windwp/nvim-autopairs", config = function() require("nvim-autopairs").setup {} end },
+  { "windwp/nvim-autopairs",   config = function() require("nvim-autopairs").setup {} end },
 
   {
     'akinsho/bufferline.nvim',
@@ -97,24 +95,12 @@ return {
     dependencies =
     'nvim-tree/nvim-web-devicons'
   },
-
-
-  {
-    "numToStr/Comment.nvim",
-    -- keys = { "gc", "gb" },
-    config = function()
-      require("Comment").setup()
-    end,
-  },
   {
     "nvim-tree/nvim-tree.lua",
     version = "*",
     dependencies = {
       "nvim-tree/nvim-web-devicons",
     },
-    config = function()
-      require("nvim-tree").setup {}
-    end,
   },
 
   {
@@ -127,13 +113,15 @@ return {
       })
     end
   },
+  { 'akinsho/toggleterm.nvim', version = "*",                                             config = true },
+  { 'numToStr/Comment.nvim' },
 
   -- Themes and Visuals
   --
   'navarasu/onedark.nvim',
   'olivercederborg/poimandres.nvim',
-  { 'rose-pine/neovim',      name = 'rose-pine' },
-  { "catppuccin/nvim",       name = "catppuccin" },
+  { 'rose-pine/neovim', name = 'rose-pine' },
+  { "catppuccin/nvim",  name = "catppuccin" },
   {
     'nvim-lualine/lualine.nvim',
     -- See `:help lualine.txt`
@@ -146,6 +134,28 @@ return {
         --section_separators = { left = '', right = '' },
       },
     },
+  },
+  {
+    'glepnir/dashboard-nvim',
+    dependencies = { { 'nvim-tree/nvim-web-devicons' } }
+  },
+
+
+  {
+    "jackMort/ChatGPT.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("chatgpt").setup({
+        -- keymaps = {
+        --   submit = "<C-s>"
+        -- }
+      })
+    end,
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim"
+    }
   },
 
 }
