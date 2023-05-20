@@ -4,6 +4,8 @@
 
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>b", vim.cmd.NvimTreeFindFileToggle, { desc = 'Toggle File Explorer' })
+vim.api.nvim_set_keymap('', '<C-\\>', ':vs<CR>', { noremap = true, desc = 'Split Vertical, VS code'})
+
 --vim.keymap.set("n", "<leader>b", vim.cmd.Ex)
 
 vim.keymap.set("n", "<Tab>", ":bnext<CR>", {noremap=true, silent=true})
