@@ -32,7 +32,9 @@ vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = '[Y]ank whole line to Clipboa
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<C-z>", "<nop>")
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
-vim.keymap.set("n", "<leader>;", vim.lsp.buf.format, { desc = '[F]ormat' })
+-- vim.keymap.set("n", "<leader>;", vim.lsp.buf.format, { desc = '[F]ormat' })
+vim.keymap.set("n", "<leader>z", vim.lsp.buf.format, { desc = '[F]ormat' })
+vim.keymap.set("n", "<leader>;",":ALEFix<CR>", { noremap = true, silent= true,desc = '[F]ormat' })
 
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz", { desc = 'Quick fix, Up' })
 vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz", { desc = 'Quick fix, Down' })

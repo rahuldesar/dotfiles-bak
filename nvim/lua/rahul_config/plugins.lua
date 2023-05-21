@@ -146,4 +146,5 @@ return {
   { 'NvChad/nvim-colorizer.lua' },
   { "folke/todo-comments.nvim" },
   { "dense-analysis/ale" },
+  { "prettier/vim-prettier"},
 }
