@@ -1,36 +1,43 @@
-# show all Alias
-alias showalias="alias | sed 's/alias //'"
+# finde alias using grep
 
-alias findalias="showalias | grep"
-
-
+alias findalias="alias | sed 's/alias //' | grep"
 
 # Display directory structure using the tree command (install if not available)
+
 alias t='tree'
 
-# Open a file in the Nano text editor (replace with your preferred editor)
-# alias e='nano'
+# Open a file in the vim text editor (replace with your preferred editor)
+
+# alias e='vim'
 
 # Enable resumable downloads with wget
+
 alias wget='wget -c'
 
 # bind vim to use neovim
+
 alias vim='nvim'
 
-# vscode in current directory
+# open vscode in current directory
+
 alias c='code .'
 
 # Prompt before overwriting files
+
 alias cp='cp -i'
 
 # Prompt before overwriting files
+
 alias mv='mv -i'
 
 # Prompt before deleting files
+
 alias rm='rm -i'
 
 # sleep shortcut
+
 alias gg='sudo pm-suspend'
 
 # vim styled quit
+
 alias :q='exit'
