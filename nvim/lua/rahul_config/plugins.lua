@@ -147,4 +147,6 @@ return {
   { "folke/todo-comments.nvim" },
   { "dense-analysis/ale" },
   { "prettier/vim-prettier"},
+  { "christoomey/vim-tmux-navigator",
+  lazy = false,}
 }
