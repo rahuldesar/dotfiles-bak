@@ -1,5 +1,5 @@
-# Currently not much added because I like default setup 
+#command_timeout = 1000 Currently not much added because I like default setup 
 
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
-
+command_timeout = 1000
