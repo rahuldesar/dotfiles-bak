@@ -2,13 +2,25 @@
 
 alias findalias="alias | sed 's/alias //' | grep"
 
-# Display directory structure using the tree command (install if not available)
+alias t='tmux'
 
-alias t='tree'
+alias xsc='xclip -selection clipboard'
+
+alias :so="source ~/.bashrc"
+
 
 # Open a file in the vim text editor (replace with your preferred editor)
 
 # alias e='vim'
+
+
+# some more ls aliases
+alias ls='exa -xG --icons --color=auto --group-directories-first '
+alias ll='exa -lF --icons --color=auto --group-directories-first '
+alias lls='exa -lF --icons --color=auto --group-directories-first --sort=size --reverse'
+alias la='exa -axG --icons --color=auto --group-directories-first '
+# alias l='ls -CF'
+
 
 # Enable resumable downloads with wget
 
