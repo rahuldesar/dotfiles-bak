@@ -1,8 +1,9 @@
-require("toggleterm").setup {
-  open_mapping = [[`]],
-  direction = "float",
-  shading_factor = 2,
-  start_in_insert = true,
-  close_on_exit = true,
-  auto_scroll = true
-}
+require("toggleterm").setup({
+	open_mapping = [[<leader>`]],
+	start_in_insert = false,
+	insert_mappings = false,  
+	direction = "float",
+	shading_factor = 2,
+	close_on_exit = true,
+	auto_scroll = true,
+})

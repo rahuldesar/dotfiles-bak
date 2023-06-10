@@ -8,7 +8,7 @@
 
 -- Cursor line highlighting
 -- vim.opt.cursorline = true
-vim.api.nvim_set_keymap('n', '<Leader>h', ':vert h<Space>', { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>h", ":vert h<Space>", { noremap = true })
 
 -- Show current mode on the last line
 vim.opt.showmode = true
@@ -17,13 +17,13 @@ vim.opt.showmode = true
 --vim.opt.background = 'dark'
 
 -- Set the default color scheme
-vim.cmd('colorscheme catppuccin')
+vim.cmd("colorscheme catppuccin")
 
 -- Configure status line
 --vim.g.lightline = { colorscheme = 'onedark' }
 
 -- Enable syntax highlighting
-vim.opt.syntax = 'on'
+vim.opt.syntax = "on"
 
 -- Set text width to 100 characters
 --vim.opt.textwidth = 100
@@ -31,6 +31,7 @@ vim.opt.syntax = 'on'
 -- Show line numbers (relative = relativenumber, absolute = number)
 vim.opt.nu = true
 vim.opt.relativenumber = true
+
 
 -- Show command info
 vim.opt.showcmd = true
@@ -58,13 +59,11 @@ vim.opt.softtabstop = 2
 
 vim.opt.expandtab = true
 
-
 -- Set terminal's title
 vim.opt.title = true
 
 -- Enable mouse
 vim.opt.mouse = "a"
-
 
 -- Copy to system clipboard
 --vim.opt.clipboard = "unnamedplus"
