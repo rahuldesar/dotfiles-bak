@@ -8,7 +8,7 @@
 
 -- Cursor line highlighting
 -- vim.opt.cursorline = true
-vim.api.nvim_set_keymap("n", "<Leader>h", ":vert h<Space>", { noremap = true })
+-- vim.api.nvim_set_keymap("n", "<Leader>h", ":vert h<Space>", { noremap = true })
 
 -- Show current mode on the last line
 vim.opt.showmode = true

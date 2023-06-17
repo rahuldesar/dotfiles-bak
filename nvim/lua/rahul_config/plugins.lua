@@ -1,144 +1,106 @@
 return {
-	--  ========= MUST HAVE =============
-	--  TELESCOPE
-	{
-		"nvim-telescope/telescope.nvim",
-		tag = "0.1.1",
-		-- or                              , branch = '0.1.1',
-		dependencies = { "nvim-lua/plenary.nvim" },
-	},
+  --  ========= LSP and  all the good stuff =============
 
-	{
-		"nvim-treesitter/nvim-treesitter",
-		dependencies = {
-			"nvim-treesitter/nvim-treesitter-textobjects",
-		},
-		config = function()
-			pcall(require("nvim-treesitter.install").update({ with_sync = true }))
-		end,
-	},
-	{ "mbbill/undotree" },
-	{ "tpope/vim-fugitive" },
+  { "mbbill/undotree" },
+  { "theprimeagen/harpoon" },
+  { "tpope/vim-rhubarb" },
+  { "nvim-treesitter/playground" },
 
-	{ "theprimeagen/harpoon" },
-	"tpope/vim-rhubarb",
+  {
+    "nvim-telescope/telescope.nvim",
+    tag = "0.1.1",
+    dependencies = { "nvim-lua/plenary.nvim" },
+  },
 
-	-- {
-	-- 	"folke/which-key.nvim",
-	-- 	config = function()
-	-- 		vim.o.timeout = true
-	-- 		vim.o.timeoutlen = 300
-	-- 		require("which-key").setup({
-	-- 			-- your configuration comes here
-	-- 			-- or leave it empty to use the default settings
-	-- 			-- refer to the configuration section below
-	-- 		})
-	-- 	end,
-	-- },
-	{
-		"VonHeikemen/lsp-zero.nvim",
-		branch = "v1.x",
-		dependencies = {
-			-- LSP Support
-			{ "neovim/nvim-lspconfig" }, -- Required
-			{ "williamboman/mason.nvim" }, -- Optional
-			{ "williamboman/mason-lspconfig.nvim" }, -- Optional
+  {
+    "nvim-treesitter/nvim-treesitter",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter-textobjects",
+    },
+    config = function()
+      pcall(require("nvim-treesitter.install").update({ with_sync = true }))
+    end,
+  },
 
-			-- Autocompletion
-			{ "hrsh7th/nvim-cmp" }, -- Required
-			{ "hrsh7th/cmp-nvim-lsp" }, -- Required
-			{ "hrsh7th/cmp-buffer" }, -- Optional
-			{ "hrsh7th/cmp-path" }, -- Optional
-			{ "saadparwaiz1/cmp_luasnip" }, -- Optional
-			{ "hrsh7th/cmp-nvim-lua" }, -- Optional
+  {
+    "VonHeikemen/lsp-zero.nvim",
+    branch = "v1.x",
+    dependencies = {
+      -- Lsp
+      { "neovim/nvim-lspconfig" },
+      { "williamboman/mason.nvim" },
+      { "williamboman/mason-lspconfig.nvim" },
 
-			-- Snippets
-			{ "L3MON4D3/LuaSnip" }, -- Required
-			{ "rafamadriz/friendly-snippets" }, -- Optional
-		},
-	},
+      -- Autocompletion
+      { "hrsh7th/nvim-cmp" },
+      { "hrsh7th/cmp-nvim-lsp" },
+      { "hrsh7th/cmp-buffer" },
+      { "hrsh7th/cmp-path" },
+      { "saadparwaiz1/cmp_luasnip" },
+      { "hrsh7th/cmp-nvim-lua" },
 
-	{
-		"lewis6991/gitsigns.nvim",
-		config = function()
-			require("gitsigns").setup()
-		end,
-	},
+      -- Snippets
+      { "L3MON4D3/LuaSnip" },
+      { "rafamadriz/friendly-snippets" },
+    },
+  },
 
-	-- ======== Quality of Life ==========
+  { "lewis6991/gitsigns.nvim" },
+  {
+    "folke/trouble.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    },
+  },
+  -- ======== Quality of Life ==========
 
-	{
-		"lukas-reineke/indent-blankline.nvim",
-		-- Enable `lukas-reineke/indent-blankline.nvim`
-		-- See `:help indent_blankline.txt`
-		opts = {
-			char = "┊",
-			show_trailing_blankline_indent = false,
-		},
-	},
+  { "christoomey/vim-tmux-navigator",      lazy = false },
+  { "sindrets/diffview.nvim" },
+  { "akinsho/toggleterm.nvim",             version = "*",                                                    config = true },
+  { "numToStr/Comment.nvim" },
+  { "lukas-reineke/indent-blankline.nvim", opts = { char = "┊", show_trailing_blankline_indent = false, }, },
 
-	{
-		-- Autocompletion
-		"hrsh7th/nvim-cmp",
-		dependencies = { "hrsh7th/cmp-nvim-lsp", "L3MON4D3/LuaSnip", "saadparwaiz1/cmp_luasnip" },
-	},
+  {
+    "windwp/nvim-autopairs",
+    config = function()
+      require("nvim-autopairs").setup({})
+    end,
+  },
 
-	{
-		"windwp/nvim-autopairs",
-		config = function()
-			require("nvim-autopairs").setup({})
-		end,
-	},
+  {
+    "akinsho/bufferline.nvim",
+    version = "v3.*",
+    dependencies = "nvim-tree/nvim-web-devicons",
+  },
 
-	{
-		"akinsho/bufferline.nvim",
-		version = "v3.*",
-		dependencies = "nvim-tree/nvim-web-devicons",
-	},
-	{
-		"nvim-tree/nvim-tree.lua",
-		version = "*",
-		dependencies = {
-			"nvim-tree/nvim-web-devicons",
-		},
-	},
+  {
+    "nvim-tree/nvim-tree.lua",
+    version = "*",
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
+  },
 
-	{
-		"kylechui/nvim-surround",
-		version = "*", -- Use for stability; omit to use `main` branch for the latest features
-		event = "VeryLazy",
-		config = function()
-			require("nvim-surround").setup({
-				-- Configuration here, or leave empty to use defaults
-			})
-		end,
-	},
-	{ "akinsho/toggleterm.nvim", version = "*", config = true },
-	{ "numToStr/Comment.nvim" },
+  -- ========== Themes and Visuals ===========
 
-	-- Themes and Visuals
-	--
-	{ "catppuccin/nvim", name = "catppuccin" },
-	{
-		"nvim-lualine/lualine.nvim",
-		-- See `:help lualine.txt`
-		opts = {
-			options = {
-				icons_enabled = true,
-				theme = "auto",
-				component_separators = "|",
-				section_separators = "",
-				--section_separators = { left = '', right = '' },
-			},
-		},
-	},
-	{ "mhinz/vim-startify" },
-	{ "rcarriga/nvim-notify" },
-	{ "metakirby5/codi.vim" },
-	{ "NvChad/nvim-colorizer.lua" },
-	{ "folke/todo-comments.nvim" },
-	{ "dense-analysis/ale" },
-	{ "prettier/vim-prettier" },
-	{ "christoomey/vim-tmux-navigator", lazy = false },
-	{ "sindrets/diffview.nvim" },
+  { "catppuccin/nvim",            name = "catppuccin" },
+  { "mhinz/vim-startify" },
+  { "norcalli/nvim-colorizer.lua" },
+  {
+    "nvim-lualine/lualine.nvim",
+    opts = {
+      options = {
+        icons_enabled = true,
+        theme = "auto",
+        component_separators = "|",
+        section_separators = "",
+      },
+    },
+  },
+
+  { "tpope/vim-fugitive" },
+  { "preservim/tagbar" },
 }
