@@ -3,6 +3,8 @@
 alias findalias="alias | sed 's/alias //' | grep"
 
 alias t='tmux'
+alias ct='tmux a -t'
+alias nt='tmux new -s'
 
 alias xsc='xclip -selection clipboard'
 
