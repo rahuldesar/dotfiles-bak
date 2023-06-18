@@ -1,57 +1,53 @@
-# finde alias using grep
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
 
+alias :so="source ~/.bashrc"
+alias :q='exit'
+alias gg='sudo pm-suspend'
+alias path='echo -e ${PATH//:/\\n}'
+
+# finde alias using grep
 alias findalias="alias | sed 's/alias //' | grep"
 
+#Tmux Bindings
 alias t='tmux'
 alias ct='tmux a -t'
 alias nt='tmux new -s'
 
 alias xsc='xclip -selection clipboard'
 
-alias :so="source ~/.bashrc"
-
-
-# Open a file in the vim text editor (replace with your preferred editor)
-
-# alias e='vim'
-
-
 # some more ls aliases
 alias ls='exa -xG --icons --color=auto --group-directories-first '
 alias ll='exa -lF --icons --color=auto --group-directories-first '
 alias lls='exa -lF --icons --color=auto --group-directories-first --sort=size --reverse'
 alias la='exa -axG --icons --color=auto --group-directories-first '
-# alias l='ls -CF'
 
 
 # Enable resumable downloads with wget
-
 alias wget='wget -c'
 
-# bind vim to use neovim
-
+# Editor Bindings
 alias vim='nvim'
-
-# open vscode in current directory
-
 alias c='code .'
 
-# Prompt before overwriting files
-
+# Prompt before file changes
 alias cp='cp -i'
-
-# Prompt before overwriting files
-
 alias mv='mv -i'
-
-# Prompt before deleting files
-
 alias rm='rm -i'
 
-# sleep shortcut
+# Get External IP / Internet Speed
+alias myip="curl https://ipinfo.io/json" # or /ip for plain-text ip
+alias speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"
 
-alias gg='sudo pm-suspend'
 
-# vim styled quit
+# Kill all the tabs in Chrome to free up memory 
+# [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
+alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
 
-alias :q='exit'
+# Cool Stuff
+for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
+	alias "${method}"="lwp-request -m '${method}'"
+done
+
