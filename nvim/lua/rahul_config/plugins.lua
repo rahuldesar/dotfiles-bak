@@ -27,7 +27,7 @@ return {
     branch = "v1.x",
     dependencies = {
       -- Lsp
-      { "neovim/nvim-lspconfig" },
+      { "neovim/nvim-lspconfig", },
       { "williamboman/mason.nvim" },
       { "williamboman/mason-lspconfig.nvim" },
 
@@ -100,7 +100,15 @@ return {
       },
     },
   },
-
   { "tpope/vim-fugitive" },
-  { "preservim/tagbar" },
+
+  -- ========== Debugger ===========
+  --
+  { "mfussenegger/nvim-dap" },
+  { "mxsdev/nvim-dap-vscode-js" },
+  -- {"leoluz/nvim-dap-go"},
+  { "rcarriga/nvim-dap-ui" },
+  { "theHamsta/nvim-dap-virtual-text" },
+  { "nvim-telescope/telescope-dap.nvim" },
+  { "folke/todo-comments.nvim" },
 }

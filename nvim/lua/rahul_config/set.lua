@@ -18,6 +18,7 @@ vim.opt.showmode = true
 
 -- Set the default color scheme
 vim.cmd("colorscheme catppuccin")
+vim.cmd("highlight LineNr guifg=#a8a29e")
 
 -- Configure status line
 --vim.g.lightline = { colorscheme = 'onedark' }

@@ -41,6 +41,15 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("n", "<C-\\>", ":vsp<CR>", { noremap = true, silent = true, desc = "Split Vertical" })
 end)
 
+lsp.set_sign_icons({
+  error = '✘',
+  warn = '▲',
+  hint = '⚑',
+  info = '»'
+})
+
+
 lsp.nvim_workspace()
+
 
 lsp.setup()
