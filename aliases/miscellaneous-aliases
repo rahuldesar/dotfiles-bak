@@ -3,6 +3,8 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
+alias yt='ytfzf -t'
+
 alias :so="source ~/.bashrc"
 alias :q='exit'
 alias gg='sudo pm-suspend'

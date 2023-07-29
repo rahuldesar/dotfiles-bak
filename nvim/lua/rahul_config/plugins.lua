@@ -87,8 +87,29 @@ return {
   -- ========== Themes and Visuals ===========
 
   { "catppuccin/nvim",            name = "catppuccin" },
-  { "mhinz/vim-startify" },
+  -- { "mhinz/vim-startify" },
   { "norcalli/nvim-colorizer.lua" },
+
+  {
+    'glepnir/dashboard-nvim',
+    event = 'VimEnter',
+    dependencies = { { 'nvim-tree/nvim-web-devicons' } }
+  },
+
+  {
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    init = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 300
+    end,
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    }
+  },
+
   {
     "nvim-lualine/lualine.nvim",
     opts = {
@@ -101,6 +122,7 @@ return {
     },
   },
   { "tpope/vim-fugitive" },
+
 
   -- ========== Debugger ===========
   --
