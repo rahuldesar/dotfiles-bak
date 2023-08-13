@@ -1,20 +1,12 @@
 local map = vim.keymap.set
 
---
--- map("n", "<leader><leader>", function()
---   vim.cmd("so")
--- end)
-
 vim.g.mapleader = " "
-
 
 map("n", "<leader>b", vim.cmd.NvimTreeFindFileToggle, { desc = "Toggle File Explorer" })
 map("n", "<C-b>", vim.cmd.NvimTreeFindFileToggle, { desc = "Toggle File Explorer" })
 map("n", "<leader>\\", "Nop", { noremap = true, silent = true, desc = "Split Vertical" })
 map("n", "<leader>\\", ":vsp<CR>", { noremap = true, silent = true, desc = "Split Vertical" })
 vim.api.nvim_set_keymap("n", "<leader>so", ":source ~/.config/nvim/init.lua", {})
-
--- vim.api.nvim_set_keymap("", "<leader>v", ":vs<CR>", { noremap = true, desc = "Split Vertical, VS code" })
 
 --map("n", "<leader>b", vim.cmd.Ex)
 
@@ -67,6 +59,15 @@ map("n", "<C-l>", "<C-w>l", { silent = true })
 map("n", "<C-j>", "<C-w>j", { silent = true })
 map("n", "<C-k>", "<C-w>k", { silent = true })
 
-map("n", "<leader>z", "<C-w>o", { silent = true })
+map('n', "<C-h>", "<cmd> TmuxNavigateLeft<CR>")
+map('n', "<C-j>", "<cmd> TmuxNavigateDown<CR>")
+map('n', "<C-k>", "<cmd> TmuxNavigateUp<CR>")
+map('n', "<C-l>", "<cmd> TmuxNavigateRight<CR>")
+-- map('n', "<C-j>", NvimTmuxNavigateDown)
+-- map('n', "<C-k>", NvimTmuxNavigateUp)
+-- map('n', "<C-l>", NvimTmuxNavigateRight)
+-- map('n', "<C-\\>",NvimTmuxNavigateLastActive)
+-- -- map('n', "<C-Space>", nvim_tmux_nav.NvimTmuxNavigateNext)
 
 
+-- map("n", "<leader>z", "<C-w>o", { silent = true })

@@ -1,5 +1,6 @@
 local builtin = require("telescope.builtin")
 local map = vim.keymap.set
+local themes = require('telescope.themes')
 
 
 map("n", "<leader>?", builtin.oldfiles, { desc = "[?] Find recently opened files" })
@@ -10,7 +11,7 @@ map("n", "<leader>/", function()
   }))
 end, { desc = "[/] Fuzzily search in current buffer" })
 
-map("n", "<leader>ff", builtin.find_files, { desc = "[S]earch [F]iles" })
+map("n", "<leader>ff", builtin.find_files, { desc = "[s]earch [f]iles" })
 map("n", "<leader>sf", builtin.find_files, { desc = "[S]earch [F]iles" })
 map("n", "<leader>sg", builtin.live_grep, { desc = "[S]earch by [G]rep" })
 map('n', '<leader>sc', builtin.colorscheme, { desc = "[S]witch [C]olorscheme" })
@@ -18,6 +19,7 @@ map('n', '<leader>sc', builtin.colorscheme, { desc = "[S]witch [C]olorscheme" })
 map("n", "<leader>sd", builtin.diagnostics, { desc = "[S]earch [D]iagnostics" })
 map("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp" })
 map("n", "<leader>st", builtin.treesitter, { desc = "[S]earch [T]reesitter" })
+map("n", "<leader>gf", builtin.lsp_document_symbols, { desc = "Symbols" })
 
 map("n", "<leader>sm", builtin.keymaps, { desc = "[S]earch key[m]aps" })
 map("n", "<leader>sw", builtin.grep_string, { desc = "[S]earch current [W]ord" })
@@ -56,16 +58,8 @@ require('telescope').setup {
   },
   pickers = {
     current_buffer_fuzzy_find = {
-      theme = "dropdown",
+      theme = "ivy",
     }
-
-    -- Default configuration for builtin pickers goes here:
-    -- picker_name = {
-    --   picker_config_key = value,
-    --   ...
-    -- }
-    -- Now the picker_config_key will be applied every time you call this
-    -- builtin picker
   },
   extensions = {
     -- Your extension configuration goes here:
@@ -75,3 +69,4 @@ require('telescope').setup {
     -- please take a look at the readme of the extension you want to configure
   }
 }
+

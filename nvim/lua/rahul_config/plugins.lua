@@ -3,7 +3,7 @@ return {
 
   { "mbbill/undotree" },
   { "theprimeagen/harpoon" },
-  { "tpope/vim-rhubarb" },
+  { "tpope/vim-rhubarb" }, -- If fugitive.vim is the Git, rhubarb.vim is the Hub
   { "nvim-treesitter/playground" },
 
   {

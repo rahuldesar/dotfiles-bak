@@ -43,3 +43,6 @@ alias gba='git branch --sort=committerdate -vv'
 
 # View a detailed Git blame annotation for a file
 alias gblame='git blame -b --show-stats'
+
+# View git ref log as graph
+alias gr='git log --oneline --abbrev-commit --graph --decorate=short --color --reflog'
