@@ -1,6 +1,5 @@
-vim.g.indent_blankline_filetype_exclude = { 'dashboard' }
-
 local db = require('dashboard')
+vim.g.indent_blankline_filetype_exclude = { 'dashboard' }
 
 db.setup({
   theme = 'doom',

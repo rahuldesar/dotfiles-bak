@@ -49,7 +49,7 @@ lsp.set_sign_icons({
 })
 
 
-lsp.nvim_workspace()
+-- lsp.nvim_workspace()
 
 
 lsp.setup()

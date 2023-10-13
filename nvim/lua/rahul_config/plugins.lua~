@@ -29,16 +29,13 @@ return {
     dependencies = {
       -- Lsp
       { "neovim/nvim-lspconfig", },
-      {
-        "williamboman/mason.nvim",
-        opts = {
+      { "williamboman/mason.nvim",
+      opts={
           ensured_installed = {
             "eslist-lsp",
-            "prettier",
             "typescript-language-server",
           }
-        }
-      },
+        },
       { "williamboman/mason-lspconfig.nvim" },
 
       -- Autocompletion

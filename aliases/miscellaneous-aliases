@@ -3,6 +3,9 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
+alias cls="clear"
+alias mcd='function _mcd() { mkdir -p "$1" && cd "$1"; }; _mcd'
+
 alias yt='ytfzf -t'
 
 alias :so="source ~/.bashrc"
@@ -17,14 +20,16 @@ alias findalias="alias | sed 's/alias //' | grep"
 alias t='tmux'
 alias ct='tmux a -t'
 alias nt='tmux new -s'
+alias kt='tmux kill-ses -t '
+
 
 alias xsc='xclip -selection clipboard'
 
 # some more ls aliases
-alias ls='exa -xG --icons --color=auto --group-directories-first '
-alias ll='exa -lF --icons --color=auto --group-directories-first '
-alias lls='exa -lF --icons --color=auto --group-directories-first --sort=size --reverse'
-alias la='exa -axG --icons --color=auto --group-directories-first '
+#alias ls='exa -xG --icons --color=auto --group-directories-first '
+#alias ll='exa -lF --icons --color=auto --group-directories-first '
+#alias lls='exa -lF --icons --color=auto --group-directories-first --sort=size --reverse'
+ #alias la='exa -axG --icons --color=auto --group-directories-first '
 
 
 # Enable resumable downloads with wget
@@ -43,6 +48,8 @@ alias rm='rm -i'
 alias myip="curl https://ipinfo.io/json" # or /ip for plain-text ip
 alias speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"
 
+alias ctrue="ssh root@49.13.76.136"
+alias ctruep="ssh root@128.140.58.77"
 
 # Kill all the tabs in Chrome to free up memory 
 # [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
